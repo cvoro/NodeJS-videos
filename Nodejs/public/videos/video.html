@@ -1,0 +1,24 @@
+<h1>List of news:</h1>
+
+<div class="row">
+    <div class="col-sm-5 col-lg-4 col-md-5" ng-repeat="x in video.Videos">
+        <div class="thumbnail">
+            <img src="{{x.picture}}" alt="">
+            <div class="caption">
+                <h4>{{x.title}}
+                    <h6 class="pull-right">{{x.released}}</h6>
+                </h4><br>
+                <p>{{x.author}}</p>
+                <h5>{{x.description | cut:true:200:' ...'}}</h5>
+            </div>
+            <div class="drp">
+                <button class="btn btn-primary" ui-sref="play({id: x.id})">Play video</button>
+            </div>
+
+        </div>
+
+    </div>
+    <div ng-if="video.show || video.Videos.length == 0" align="middle">
+        <img src="images/no-videos.jpg">
+    </div>
+</div>

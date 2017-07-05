@@ -1,0 +1,16 @@
+<div class="row">
+
+    <div ng-repeat="x in play.Video" align="middle">
+        <h2>{{x.title}}</h2>
+        <div class="video">
+            <video width="720" height="480" controls>
+  <source ng-src="{{x.video_720p}}" type="video/mp4">
+</video>
+        </div>
+        <button class="btn btn-danger" ng-click="play.SetVideoToBL(x.id, $index)">Delete</button>
+        <h4 align="left">{{x.description}}</h4>
+    </div>
+    <div ng-if="play.show || play.Video.length == 0 " align="middle">
+        <img src="images/no-videos.jpg">
+    </div>
+</div>
